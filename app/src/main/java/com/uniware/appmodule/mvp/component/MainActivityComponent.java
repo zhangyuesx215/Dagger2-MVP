@@ -1,5 +1,6 @@
 package com.uniware.appmodule.mvp.component;
 
+import com.uniware.appmodule.mvp.inject.PreActivity;
 import com.uniware.appmodule.mvp.module.MainActivityModule;
 import com.uniware.appmodule.ui.MainActivity;
 import dagger.Component;
@@ -7,8 +8,8 @@ import dagger.Component;
 /**
  * Created by ayue on 2017/4/27.
  */
-
-@Component(modules = MainActivityModule.class)
+@PreActivity
+@Component(dependencies = AppComponent.class ,modules = MainActivityModule.class)
 public interface MainActivityComponent {
   void inject(MainActivity mainActivity);
 }
